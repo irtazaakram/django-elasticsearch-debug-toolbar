@@ -1,8 +1,6 @@
 import hashlib
 import json
 
-import debug_toolbar
-
 from debug_toolbar.panels import Panel
 from debug_toolbar.utils import (
     ThreadCollector,
