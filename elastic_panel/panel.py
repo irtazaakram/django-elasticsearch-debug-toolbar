@@ -8,7 +8,7 @@ from debug_toolbar.utils import (
     ThreadCollector,
     get_stack,
     render_stacktrace,
-    get_stack_trace,
+    tidy_stacktrace,
 )
 from django.templatetags.static import static
 from django.utils.translation import gettext_lazy as _
@@ -53,7 +53,7 @@ class ElasticQueryInfo:
         self.hash = hashlib.md5(
             self.full_url.encode("ascii", "ignore") + self.body.encode("ascii", "ignore")
         ).hexdigest()
-        self.stacktrace = get_stack_trace(reversed(get_stack()))
+        self.stacktrace = tidy_stacktrace(reversed(get_stack()))
 
 
 class ElasticDebugPanel(Panel):
