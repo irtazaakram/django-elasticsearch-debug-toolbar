@@ -24,3 +24,5 @@ TEMPLATES = [
         "APP_DIRS": True,
     },
 ]
+
+USE_TZ = False
